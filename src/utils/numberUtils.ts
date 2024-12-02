@@ -38,12 +38,12 @@ export const formatNumberWithStyles = (
 };
 
 /**
- * Generates a unique transaction ID by combining the current timestamp with a random number.
- * @returns {string} A unique transaction ID
+ * Generates a unique transaction ID by combining the current timestamp with a random number
+ * @returns {string}
  */
 export const generateTransactionId = (): string => {
-  const timestamp = Date.now(); // Get the current timestamp
-  const randomNumber = Math.floor(Math.random() * 100000); // Generate a random number
+  const timestamp = Date.now();
+  const randomNumber = Math.floor(Math.random() * 100000);
 
   return `${timestamp}${randomNumber}`;
 };
