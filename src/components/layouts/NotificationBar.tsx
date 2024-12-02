@@ -1,12 +1,7 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
-import {
-  Text,
-  StyleSheet,
-  StatusBar,
-  Animated,
-  TouchableOpacity,
-} from 'react-native';
+import { Text, StatusBar, Animated, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
+import LayoutStyle from 'styles/LayoutStyle';
 
 interface NotificationContextProps {
   showNotification: (message: string, duration?: number) => void;
@@ -74,44 +69,17 @@ export const NotificationProvider: React.FC<{ children: ReactNode }> = ({
     <NotificationContext.Provider value={{ showNotification }}>
       {children}
       {visible && (
-        <Animated.View style={[styles.notificationBar, { opacity: fadeAnim }]}>
+        <Animated.View
+          style={[LayoutStyle.notificationBar, { opacity: fadeAnim }]}
+        >
           <StatusBar backgroundColor="#ffffff" barStyle="dark-content" />
-          <Icon name="closecircle" size={30} color={'#BD0F1B'} />
-          <Text style={styles.notificationText}>{message}</Text>
+          <Icon name="closecircle" size={32} color={'#BD0F1B'} />
+          <Text style={LayoutStyle.notificationText}>{message}</Text>
           <TouchableOpacity onPress={() => setVisible(false)}>
-            <Icon name="close" size={15} color={'grey'} />
+            <Icon name="close" size={15} color={'#818283'} />
           </TouchableOpacity>
         </Animated.View>
       )}
     </NotificationContext.Provider>
   );
 };
-
-const styles = StyleSheet.create({
-  notificationBar: {
-    width: '90%',
-    backgroundColor: '#ffffff',
-    paddingVertical: 10,
-    paddingHorizontal: 15,
-    position: 'absolute',
-    top: 60,
-    zIndex: 1000,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    alignSelf: 'center',
-    borderRadius: 10,
-    shadowColor: '#000',
-    shadowOffset: { width: 5, height: 5 },
-    shadowOpacity: 0.2,
-    shadowRadius: 8,
-    elevation: 10,
-  },
-  notificationText: {
-    color: '#000000',
-    fontSize: 14,
-    flex: 1,
-    fontFamily: 'UbuntuDisplayBold',
-    marginLeft: 10,
-  },
-});

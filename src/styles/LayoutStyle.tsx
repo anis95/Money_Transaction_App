@@ -28,6 +28,32 @@ const LayoutStyle = StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold',
   },
+  notificationBar: {
+    width: '90%',
+    backgroundColor: colors.primary,
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    position: 'absolute',
+    top: 60,
+    zIndex: 1000,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    alignSelf: 'center',
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 5, height: 5 },
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
+    elevation: 10,
+  },
+  notificationText: {
+    color: colors.secondary,
+    fontSize: 14,
+    flex: 1,
+    fontFamily: 'UbuntuDisplayBold',
+    marginLeft: 10,
+  },
 });
 
 export default LayoutStyle;
