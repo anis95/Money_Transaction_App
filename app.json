@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "Transaction",
+    "scheme": "transaction",
+    "slug": "transaction",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon-app.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "developmentClient": true,
+    "splash": {
+      "image": "./assets/images/icon-app.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.kaoun.app.flouci"
+    },
+    "android": {
+      "package": "com.kaoun.app.flouci",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/icon-app.png",
+        "backgroundColor": "#000000"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
